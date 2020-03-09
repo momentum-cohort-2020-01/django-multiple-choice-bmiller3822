@@ -11,7 +11,17 @@
 </head>
 
 <header class=header>
-
+    <a class="home-button" href="{% url 'snippets' %}">
+        <h1 class="site-name">
+            Code Snippet Library
+        </h1>
+    </a>
+    <div class="logout-container">
+        <a class="logout" href="/accounts/login/">Login |</a>
+    </div>
+    <div class="logout-container">
+        <a class="logout" href="/accounts/logout/">Logout</a>
+    </div>
 </header>
 
 <body>
