@@ -1,7 +1,7 @@
 import datetime
-from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.text import slugify
+from users.models import User
 
 Categories = (
     ('HTML', 'HTML'),
