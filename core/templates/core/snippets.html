@@ -8,6 +8,17 @@
             <a href="{% url 'snippet-detail' snippet.pk%}">{{snippet.snippet_title}}</a>
         </h2>
     </div>
+    <div class="snippet-details">
+        <!--This will be where the JavaScript resides.-->
+        <h3>
+            {{snippet.snippet_title}}
+        </h3>
+        <p>{{snippet.language}}</p>
+        <p>{{snippet.details}}</p>
+        <p>{{snippet.code}}</p>
+        <p>{{snippet.category}}</p>
+
+    </div>
 </div>
 {% endfor %}
 
