@@ -54,7 +54,3 @@ class Library(models.Model):
 
     def __str__(self):
         return f'Snippet: {self.snippet.pk}'
-
-
-# class User(AbstractUser):
-#     pass

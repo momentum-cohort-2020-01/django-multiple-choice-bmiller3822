@@ -11,6 +11,11 @@ def snippets(request):
     snippets = Snippet.objects.all()
     return render(request, 'core/snippets.html', {'snippets': snippets})
 
+def snippet_detail(request, pk):
+    snippets = Snippet.objects.all()
+    snippet = Snippet.objects.get(pk=pk)
+    return render(request, 'core/snippet_detail.html', {'snippet': snippet, 'pk': pk})
+
 
 def add_snippet(request):
     snippets = Snippet.objects.all()
@@ -45,6 +50,5 @@ def delete_snippet(request, pk):
     
 def snippets_by_category(request, slug):
     category = Category.objects.get(slug=slug)
-    snippets_for_category = snippets.objects.filter(category=category)
-    return render(request, 'core/snippets_by_category', {'category': category})
-
+    snippets_for_category = Snippet.objects.filter(category=category)
+    return render(request, 'core/snippets_by_category.html', {'snippets': snippets_for_category, 'category': category})
