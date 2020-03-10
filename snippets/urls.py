@@ -21,7 +21,9 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.snippets, name='snippets'),
+    path('', views.snippets, name = 'snippets'),
+    path('snippets/new', views.add_snippet, name = 'add-snippet'),
+    path('snippets/edit/<int:pk>', views.edit_snippet, name="edit-snippet"),
 ]
 
 if settings.DEBUG:
