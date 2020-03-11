@@ -44,6 +44,11 @@
     <hr>
     <a class="new" href="{% url 'add-snippet' %}">New Snippet</a>
     <hr>
+    <div class="search-bar">
+        <form action="" method="GET" id="search-form">
+            <input type="text" id="search" name="q" placeholder="Search..." value="{{query}}" />
+        </form>
+    </div>
 </header>
 
 <body>
