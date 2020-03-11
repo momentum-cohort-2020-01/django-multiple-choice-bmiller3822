@@ -9,13 +9,12 @@
         </h2>
     </div>
     <div class="snippet-details" id="snippet-detail">
-        <!--This will be where the JavaScript resides.-->
         <h3>
             {{snippet.snippet_title}}
         </h3>
         <p>{{snippet.language}}</p>
         <p>{{snippet.details}}</p>
-        <pre><code class="language-html">{{snippet.code}}</code></pre>
+        <pre><code class="language-{{snippet.category}}" id="code">{{snippet.code}}</code></pre>
         <p>{{snippet.category}}</p>
     </div>
     <p class="edit-delete link">

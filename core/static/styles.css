@@ -1,7 +1,7 @@
 :root {
-    --main-title-color:
-    --background-color:
-    --main-text-color:
-    --accent-color:
-    --accent-color2:
+    --main-title-color: blue;
+    --background-color: red;
+    --main-text-color: yellow;
+    --accent-color: green;
+    --accent-color2: purple;
 }
