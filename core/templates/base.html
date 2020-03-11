@@ -40,11 +40,13 @@
         <a class="description link" href='/snippets/AJAX/'> C++ </a>
         <a class="description link" href='/snippets/JSON/'> Objective C</a>
     </div>
+    <hr>
+    <a class="description link" href="{% url 'add-snippet' %}">New Snippet</a>
+    <hr>
 </header>
 
 <body>
     {% block content %}
-    Hello World!
     {% endblock %}
 </body>
 

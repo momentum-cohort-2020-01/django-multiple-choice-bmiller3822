@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for snippet in snippets %}
+<div>
+    <div>
+        <h3 class="title">
+            <a href="{% url 'snippet-detail' snippet.pk %}">{{snippet.snippet_title}}</a>
+        </h3>
+        <p class="details">
+            {{snippet.language}}
+            {{snippet.description}}
+        </p>
+    </div>
+
+    <p class="link description">
+        {% if snippet.category %}<a
+            href='{% url "snippets-by-category" snippet.category.slug %}'>{{snippet.category}}</a>{% endif %}
+    </p>
+
+</div>
+{% endfor %}
+
+{% endblock %}
