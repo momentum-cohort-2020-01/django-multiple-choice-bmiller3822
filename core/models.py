@@ -8,13 +8,11 @@ Categories = (
     ('CSS', 'CSS'),
     ('JavaScript', 'JavaScript'),
     ('JSON', 'JSON'),
-    ('AJAX', 'AJAX'),
     ('Python', 'Python'),
     ('Django', 'Django'),
     ('Java', 'Java'),
     ('C#', 'C#'),
     ('Ruby', 'Ruby'),
-    ('Rails', 'Rails'),
     ('C++', 'C++'),
     ('C', 'C'),
 )
@@ -22,14 +20,13 @@ Categories = (
 
 class Snippet(models.Model):
     snippet_title = models.CharField(max_length=255)
-    language = models.CharField(max_length=255)
     description = models.TextField()
     code = models.TextField()
     category = models.ForeignKey(
         'Category', on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return f'Snippet title: {self.snippet_title} Language: {self.language} Description: {self.description} Category: {self.category} Code: {self.code} '
+        return f'Snippet title: {self.snippet_title} Description: {self.description} Category: {self.category} Code: {self.code} '
 
     # class Meta:
     #     ordering = ['-created_at']
