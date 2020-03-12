@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
     <link rel="stylesheet" href="{% static 'prism.css' %}" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <script src="static/prism.js"></script>
-    {% block title %}<title>Code Snippet Tracker</title>{% endblock %}
+    <script src="static/prism.js">
+        var snippets = "{{Snippet}}";
+    </script>
+    {% block title %}<title class="main-title">Code Snippet Tracker</title>{% endblock %}
 </head>
 
 <header class=header>
@@ -27,29 +29,42 @@
     <hr>
     <div class="headercontainer categories">
         <p class="description link">Snippets by Category: </p>
-        <a class="description link" href='/'> All </a>
-        <a class="description link" href='/snippets/HTML/'> HTML </a>
-        <a class="description link" href='/snippets/CSS/'> CSS </a>
-        <a class="description link" href='/snippets/JavaScript/'> JavaScript </a>
-        <a class="description link" href='/snippets/Python/'> Python </a>
-        <a class="description link" href='/snippets/Django/'> Django </a>
-        <a class="description link" href='/snippets/AJAX/'> AJAX </a>
-        <a class="description link" href='/snippets/JSON/'> JSON </a>
-        <a class="description link" href='/snippets/CSS/'> Java </a>
-        <a class="description link" href='/snippets/JavaScript/'> C# </a>
-        <a class="description link" href='/snippets/Python/'> Ruby on Rails </a>
-        <a class="description link" href='/snippets/Django/'> Ruby </a>
-        <a class="description link" href='/snippets/AJAX/'> C++ </a>
+        <a class="description link" href='/'> All | </a>
+        <a class="description link" href='/snippets/HTML/'> HTML | </a>
+        <a class="description link" href='/snippets/CSS/'> CSS | </a>
+        <a class="description link" href='/snippets/JavaScript/'> JavaScript | </a>
+        <a class="description link" href='/snippets/Python/'> Python | </a>
+        <a class="description link" href='/snippets/Django/'> Django | </a>
+        <a class="description link" href='/snippets/AJAX/'> AJAX | </a>
+        <a class="description link" href='/snippets/JSON/'> JSON | </a>
+        <a class="description link" href='/snippets/CSS/'> Java | </a>
+        <a class="description link" href='/snippets/JavaScript/'> C# | </a>
+        <a class="description link" href='/snippets/Django/'> Ruby | </a>
+        <a class="description link" href='/snippets/AJAX/'> C++ | </a>
         <a class="description link" href='/snippets/JSON/'> Objective C</a>
     </div>
-    <hr>
-    <a class="description link" href="{% url 'add-snippet' %}">New Snippet</a>
-    <hr>
+    <div class="new">
+        <hr>
+        <a class="new" href="{% url 'add-snippet' %}">New Snippet</a>
+        <hr>
+    </div>
+    <div class="search-bar">
+        <form action="" method="GET" id="search-form">
+            <input type="text" id="search" name="q" placeholder="Search..." value="{{query}}" />
+        </form>
+    </div>
 </header>
+{% if snippets %}
 
 <body>
     {% block content %}
     {% endblock %}
 </body>
+{% else %}
+<div class="no-results">
+    <p>Your search returned 0 results.</p>
+    <a class="home-button" href="{% url 'snippets' %}">Home</a>
+</div>
+{% endif %}
 
 </html>

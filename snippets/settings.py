@@ -88,7 +88,16 @@ WSGI_APPLICATION = 'snippets.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {'default': env.db()}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'snippet-library',
+        'USER': 'snippet-library’,
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -145,3 +154,8 @@ INTERNAL_IPS = [
 ACCOUNT_ACTIVATION_DAYS = 14
 LOGIN_REDIRECT_URL = '/'
 REGISTRATION_AUTO_LOGIN = True
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
+
