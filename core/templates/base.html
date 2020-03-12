@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
     <link rel="stylesheet" href="{% static 'prism.css' %}" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    <script src="static/prism.js"></script>
+    <script src="static/prism.js">
+        var snippets = "{{Snippet}}";
+    </script>
     {% block title %}<title class="main-title">Code Snippet Tracker</title>{% endblock %}
 </head>
 
@@ -41,19 +43,28 @@
         <a class="description link" href='/snippets/AJAX/'> C++ | </a>
         <a class="description link" href='/snippets/JSON/'> Objective C</a>
     </div>
-    <hr>
-    <a class="new" href="{% url 'add-snippet' %}">New Snippet</a>
-    <hr>
+    <div class="new">
+        <hr>
+        <a class="new" href="{% url 'add-snippet' %}">New Snippet</a>
+        <hr>
+    </div>
     <div class="search-bar">
         <form action="" method="GET" id="search-form">
             <input type="text" id="search" name="q" placeholder="Search..." value="{{query}}" />
         </form>
     </div>
 </header>
+{% if snippets %}
 
 <body>
     {% block content %}
     {% endblock %}
 </body>
+{% else %}
+<div class="no-results">
+    <p>Your search returned 0 results.</p>
+    <a class="home-button" href="{% url 'snippets' %}">Home</a>
+</div>
+{% endif %}
 
 </html>

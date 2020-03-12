@@ -16,6 +16,8 @@ werkzeug = "*"
 django-environ = "*"
 django-registration-redux = "*"
 pylint-django = "*"
+psycopg2 = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"

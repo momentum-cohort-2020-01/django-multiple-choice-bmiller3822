@@ -2,7 +2,7 @@
     --main-title-color: white;
     --main-text-color: #86C232;
     --secondary-text-color: #6B6E70;
-    --accent-color: #474B74;
+    --accent-color: rgb(88,	88,	88	);
     --accent-color2: #61892F;
 }
 
@@ -14,18 +14,24 @@
 
 .title, .new, .home-button, .header, .logout-container{
     margin: 10px;
+    text-align: center;
 }
 
 .site-name{
-    font-family: 'Baloo 2', cursive;
+    font-family: 'Oxanium', cursive;
 }
 
 a{
-    color: var(--main-title-color);
+    color: var(--main-text-color);
 }
 
 a:visited{
-    color: var(--secondary-text-color);
+    color: var(--accent-color2);
+}
+
+.new{
+    margin: 10px;
+    padding: 20px;
 }
 
 html { 
@@ -36,16 +42,48 @@ html {
     background-size: cover;
   }
 
-body{
+body, .no-results{
     color: var(--main-text-color);
     font-family: 'Titillium Web', sans-serif;
 }
 
-.snippet-details{
+.snippet-details, .no-results{
     width: 60%;
     margin: 10px 20%;
+    padding: 15px;
+    border: 5px solid var(--accent-color2);
+    border-radius: 5px;
 }
 
 .edit-delete{
     margin: 10px;
+}
+
+#search{
+    width: 40%;
+    height: 35px;
+    margin: 10px;
+    background-color: var(--accent-color);
+    color: var(--main-text-color);
+}
+
+#search::placeholder{
+    color: var(--main-text-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+hr {
+    color: var(--accent-color2);
+    width: 100%;
+    margin: 5px;
+}
+
+.categories {
+    padding: 10px;
+    text-align: center;
+}
+
+.edit-delete{
+    margin: 10px 50%;
 }
