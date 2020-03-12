@@ -15,6 +15,10 @@ from pathlib import Path
 
 import environ
 
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),)
@@ -157,8 +161,3 @@ INTERNAL_IPS = [
 ACCOUNT_ACTIVATION_DAYS = 14
 LOGIN_REDIRECT_URL = '/'
 REGISTRATION_AUTO_LOGIN = True
-
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
-
