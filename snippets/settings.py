@@ -92,7 +92,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'snippet-library',
-        'USER': 'snippet-library’,
+        'USER': 'snippet-library',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
