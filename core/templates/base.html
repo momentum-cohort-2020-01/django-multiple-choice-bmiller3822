@@ -54,17 +54,12 @@
         </form>
     </div>
 </header>
-{% if snippets %}
+
 
 <body>
     {% block content %}
     {% endblock %}
 </body>
-{% else %}
-<div class="no-results">
-    <p>Your search returned 0 results.</p>
-    <a class="home-button" href="{% url 'snippets' %}">Home</a>
-</div>
-{% endif %}
+
 
 </html>
