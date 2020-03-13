@@ -37,7 +37,7 @@ in_production = bool(os.getenv('PRODUCTION'))
 DEBUG = not in_production
 
 
-ALLOWED_HOSTS = [snippet-library.herokuapp.com]
+ALLOWED_HOSTS = ['snippet-library.herokuapp.com']
 
 # Application definition
 
