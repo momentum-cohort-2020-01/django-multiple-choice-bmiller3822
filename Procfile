@@ -1,1 +1,1 @@
-web:gunicorn snippets.wsgi
+web: gunicorn snippets.wsgi
