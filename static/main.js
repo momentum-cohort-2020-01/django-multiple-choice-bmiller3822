@@ -2,7 +2,8 @@ function copy_to_clipboard() {
     let buttons = document.querySelectorAll('clipboard');
     for (let button of buttons) {
         button.addEventListener('click', function (e) {
-            let parent = e.target.closest('#code-snippet')
+            e.preventDefault()
+            let parent = e.target.closest('#codearea')
             let snippet = parent.querySelector('code')
             let range = document.createRange()
             range.selectNode(snippet)
