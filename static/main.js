@@ -1,19 +1,38 @@
-// function q(selector) {
-//     return document.querySelector(selector)
-// }
+function q(selector) {
+    return document.querySelector(selector)
+}
 
-// function main() {
-//     noResults()
-// }
 
-// function noResults() {
-//     if snippets {
-//     } else {
-//         q(body).innerHTML = <p>Sorry, your search returned zero results.</p>
-//     }
-// }
+function copyToClipboard() {
+    let clipboardButton = q("#clipboard")
+    let str = document.getElementById("#codearea").innerText
+    clipboardButton.addEventListener("click", function (event) {
+        event.preventDefault
+        const copyToClipboard = str => {
+            const el = document.createElement('textarea')
+            el.value = str
+            el.setAttribute('readonly', '')
+            el.style.position = 'absolute'
+            // el.style.left = '-9999px'
+            document.body.appendChild(el)
+            // const selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false
+            // el.select()
+            document.execCommand('copy')
+            // document.body.removeChild(el)
+            // if (selected) {
+            //     document.getSelection().removeAllRanges()
+            //     document.getSelection().addRange(selected)
+            // }
+        }
+    })
+}
 
-// document.addEventListener('DOMContentLoaded', function () {
-//     main()
-// })
+
+function main() {
+    copyToClipboard()
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    main()
+})
 

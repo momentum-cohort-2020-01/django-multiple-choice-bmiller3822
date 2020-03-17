@@ -31,7 +31,7 @@ BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 # in_production = bool(os.getenv('PRODUCTION'))
 # DEBUG = not in_production
 
@@ -97,11 +97,7 @@ WSGI_APPLICATION = 'snippets.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'snippet-library',
-        'USER': 'snippet-library',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        env.db(),
     }
 }
 
@@ -166,5 +162,3 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 
 django_heroku.settings(locals())
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
