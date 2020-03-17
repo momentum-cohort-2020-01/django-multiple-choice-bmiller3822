@@ -3,7 +3,7 @@ function copy_to_clipboard() {
     for (let button of buttons) {
         button.addEventListener('click', function (e) {
             e.preventDefault()
-            let parent = e.target.closest('#codearea')
+            let parent = e.target.closest('#code-snippet')
             let snippet = parent.querySelector('code')
             let range = document.createRange()
             range.selectNode(snippet)
