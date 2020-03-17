@@ -14,10 +14,12 @@
     </h4>
     <p>{{snippet.language}}</p>
     <p>{{snippet.details}}</p>
-    <pre id="code"><code class="language-{{snippet.category}}" id="codearea">{{snippet.code}}</code></pre>
+    <div id="code-snippet">
+      <pre><code class="language-{{snippet.category}}" id="codearea">{{snippet.code}}</code></pre>
+      <a class="edit-delete link" id="clipboard" href="#" onclick="return alert('Copied to clipboard.')">Copy to
+        Clipboard</a>
+    </div>
     <p>{{snippet.category}}</p>
-    <a class="edit-delete link" id="clipboard" href="#" onclick="return alert('Copied to clipboard.')">Copy to
-      Clipboard</a>
   </div>
   <p class="edit-delete link">
     <a href="{% url 'edit-snippet' pk=snippet.pk %}">Edit Snippet</a>
