@@ -5,8 +5,8 @@ function q(selector) {
 
 function copyToClipboard() {
     let clipboardButton = q("#clipboard")
-    let str = document.getElementById("#code").innerText
-    clipboardButton.addEventListener("click", function () {
+    let str = document.getElementById("#codearea").innerText
+    clipboardButton.addEventListener("click", function (event) {
         event.preventDefault
         const copyToClipboard = str => {
             const el = document.createElement('textarea')
@@ -15,14 +15,14 @@ function copyToClipboard() {
             el.style.position = 'absolute'
             // el.style.left = '-9999px'
             document.body.appendChild(el)
-            const selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false
-            el.select()
+            // const selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false
+            // el.select()
             document.execCommand('copy')
             // document.body.removeChild(el)
-            if (selected) {
-                document.getSelection().removeAllRanges()
-                document.getSelection().addRange(selected)
-            }
+            // if (selected) {
+            //     document.getSelection().removeAllRanges()
+            //     document.getSelection().addRange(selected)
+            // }
         }
     })
 }
