@@ -158,6 +158,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+
 
 import django_heroku
 django_heroku.settings(locals())
