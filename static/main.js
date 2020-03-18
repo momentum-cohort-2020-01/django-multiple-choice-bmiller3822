@@ -19,7 +19,7 @@ function copy_to_clipboard() {
 }
 
 function main() {
-    copyToClipboard()
+    copy_to_clipboard()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
