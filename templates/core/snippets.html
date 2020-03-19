@@ -15,6 +15,13 @@
       <pre><code class="language-{{snippet.category}}">{{snippet.code}}</code></pre>
       <button type="button" class="clipboard" onclick="return alert('Copied to clipboard.')">Copy to Clipboard</button>
     </div>
+    <div class="code-snippet">
+      <span>
+        <p>Copied </p>
+        <p id="value"></p>
+        <p> Times</p>
+      </span>
+    </div>
     <p>
       <button type="button"><a href="{% url 'edit-snippet' pk=snippet.pk %}">Edit
           Snippet</a></button>

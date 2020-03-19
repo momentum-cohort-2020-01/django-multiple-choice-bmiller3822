@@ -33,12 +33,16 @@ a, button{
     text-decoration: none;
 }
 
-button{
+button, .button{
     border-radius: 5px;
     background-color: var(--secondary-text-color);
     cursor: pointer;
     padding: 5px;
     margin: 5px;
+}
+
+.button{
+    text-align: center;
 }
 
 a:active, button:active{
@@ -48,6 +52,8 @@ a:active, button:active{
 .new{
     margin: 10px;
     padding: 20px;
+    font-size: 35px;
+    text-decoration: underline;
 }
 
 html { 
@@ -120,6 +126,9 @@ p {
 .logout-container{
     display: inline;
     text-align: center;
+    animation: fadeInAnimation ease 3s ;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards;
 }
 
 .neon-wrapper{
@@ -129,6 +138,9 @@ p {
     padding: 0;
     background: black;
     overflow: hidden;
+    animation: fadeInAnimation ease 3s ;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards;
 }
 
 .txt{
@@ -174,4 +186,33 @@ p {
     to {
         transform: translate(50%,50%);
     }
+}
+
+@keyframes slideInFromBottom {
+    0%{
+      transform: translateY(100%);
+    }
+    100%{
+      transform: translateY(0);
+    }
+  }
+
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+}
+
+  .snippet-details, .search-bar, .new, .categories, .title, .centered{
+    animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+.centered{
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    border: solid 1px white;
 }
