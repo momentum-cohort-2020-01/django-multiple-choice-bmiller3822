@@ -15,19 +15,32 @@
     {% block title %}<title class="main-title">Code Snippet Tracker</title>{% endblock %}
 </head>
 
-<header class=header>
-    <a class="home-button" href="{% url 'snippets' %}">
-        <h1 class="site-name">
-            Code Snippet Library
-        </h1>
-    </a>
-    <div class="logout-container">
-        <a class="logout" href="/accounts/login/">Login |</a>
+<header>
+    <div class="neon-wrapper header">
+        <a class="home-button" href="{% url 'snippets' %}">
+            <span class="txt">
+                Code Snippet Library
+            </span>
+            <span class="gradient"></span>
+            <span class="dodge"></span>
+        </a>
     </div>
-    <div class="logout-container">
-        <a class="logout" href="/accounts/logout/">Logout</a>
+    <br>
+    <div class="logout-container header">
+        <a class="logout" href="/accounts/login/">Login </a>
+    </div>
+    <div class="logout-container header">
+        <a class="logout" href="/accounts/logout/">Logout </a>
+    </div>
+    <div class="logout-container header">
+        <a class="logout" href="/accounts/register/">Register </a>
     </div>
     <hr>
+
+</header>
+
+
+<body>
     <div class="headercontainer categories">
         <p class="description link">Snippets by Category: </p>
         <a class="description link" href='/'> All | </a>
@@ -54,10 +67,6 @@
             <input type="text" id="search" name="q" placeholder="Search..." value="{{query}}" />
         </form>
     </div>
-</header>
-
-
-<body>
     {% block content %}
     {% endblock %}
 </body>
