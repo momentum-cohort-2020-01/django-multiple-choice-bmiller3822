@@ -5,6 +5,9 @@ function copy_to_clipboard() {
             let parent = e.target.closest('.code-snippet')
             let snippet = parent.querySelector('code')
             let range = document.createRange()
+            var counter = e.target.closest('.counter').value
+            Number(counter)
+            counter += 1
             range.selectNode(snippet)
             window.getSelection().removeAllRanges()
             window.getSelection().addRange(range)
@@ -26,6 +29,17 @@ function main() {
 document.addEventListener('DOMContentLoaded', function () {
     main()
 })
+
+
+
+// counter = parseInt(counter, 10)
+//             counter += 1
+//             counter.innerText = counter
+
+
+
+
+
 
 
 // Asel's code for later
